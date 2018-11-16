@@ -32,7 +32,7 @@ var Burger = mongoose.model('Burger');
 app.use(express.static(__dirname + '/node_modules')); // makes node_modules folder publicly accessible
 app.use(express.static(__dirname + '/public')); //
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended:true}));
+app.use(bodyParser.urlencoded({ extended: true }));
 
 var submissions = [];
 
@@ -42,18 +42,24 @@ app.get('/', function(req, res, next) {
 });
 
 app.get('/burger', function(req, res, next) {
-    Burger.find(function(err, burgers){
-        if(err){ return next(err); }
+    Burger.find(function(err, burgers) {
+        if (err) { return next(err); }
         res.json(burgers);
     });
 });
 
 app.post('/burger', function(req, res, next) {
     var newBurger = new Burger(req.body);
-    newBurger.save(function(err, burger){
-        if(err){ return next(err); }
+    newBurger.save(function(err, burger) {
+        if (err) { return next(err); }
         console.log(burger);
         res.json(burger);
+    });
+});
+
+app.get('/deleteAll', function(req, res, next) {
+    Burger.remove({}, function(err) {
+        console.log('all burgers removed');
     });
 });
 
