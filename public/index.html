@@ -4,6 +4,10 @@
 <head>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular.min.js"></script>
     <script src="scripts.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css">
     <meta charset="utf-8">
     <title>Mongo Burger</title>
@@ -20,17 +24,18 @@
     <div ng-app="myApp" ng-controller="myCtrl">
 
         <div class="container-fluid bg-2">
-            <h2>Assemble your burger components</h2>
+            <div class="col-sm-8">
+                <h2>Assemble your burger components</h2>
             <form id="newBurgerRecipe" ng-submit="addRecipe($event)">
-                Name your creation: <input type="text" ng-model="burgerName" value=""><br> 
-                Name yourself: <input type="text" ng-model="name" value=""><br> 
-                Indicate Bun Type: <input type="text" ng-model="bun" value=""><br>
-                Vegetable (you only get one): <input type="text" ng-model="vegetable" value=""><br>
-                Denote Cheese Type: <input type="text" ng-model="cheese" value=""><br>
-                Sauce Identification: <input type="text" ng-model="sauce" value=""><br>
-                Input Meat Composition: <input type="text" ng-model="meat" value=""><br>
+                Name your creation: <input type="text" ng-model="burgerName" value=""><br> Name yourself: <input type="text" ng-model="name" value=""><br> Indicate Bun Type: <input type="text" ng-model="bun" value=""><br> Vegetable (you only get one):
+                <input type="text" ng-model="vegetable" value=""><br> Denote Cheese Type: <input type="text" ng-model="cheese" value=""><br> Sauce Identification: <input type="text" ng-model="sauce" value=""><br> Input Meat Composition: <input type="text"
+                    ng-model="meat" value=""><br>
                 <input id="submitButton" type="submit" value="Submit" onclick="history.go(0)">
             </form>
+            </div>
+            <div class="col-sm-4">
+                <img id="burg" src="itsABurger.png"></img>
+            </div>
         </div>
 
         <div class="container-fluid bg-3">

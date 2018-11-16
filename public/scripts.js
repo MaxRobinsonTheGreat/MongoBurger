@@ -27,6 +27,14 @@ function burgerFetcher($http) {
 
 function mainCtrl($scope, burgerFetcher) {
     $scope.burgers = []
+    
+    $scope.burgerName = "The Default Burger";
+    $scope.name ="Anon";
+    $scope.bun = "Plain";
+    $scope.vegetable = "Lettuce";
+    $scope.cheese = "American";
+    $scope.sauce = "Ketchup";
+    $scope.meat = "Cow";
 
     burgerFetcher.get()
         .then(function(data) {
