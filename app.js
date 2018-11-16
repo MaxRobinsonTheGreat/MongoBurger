@@ -13,16 +13,18 @@ db.on('error', console.error.bind(console, 'connection error:')); //Checks for c
 db.once('open', function() { //Lets us know when we're connected
     console.log('Connected');
 });
+
 var mongoose = require('mongoose');
 var BurgerSchema = new mongoose.Schema({
-  burgerName: String,
-  name: String,
-  bun: String,
-  vegetable: String,
-  cheese: String,
-  sauce: String,
-  meat: String,
+  burgerName: {type: String, default: "None"},
+  name: {type: String, default: "None"},
+  bun: {type: String, default: "None"},
+  vegetable: {type: String, default: "None"},
+  cheese: {type: String, default: "None"},
+  sauce: {type: String, default: "None"},
+  meat: {type: String, default: "None"},
 });
+
 mongoose.model('Burger', BurgerSchema);
 var Burger = mongoose.model('Burger');
 
