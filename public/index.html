@@ -9,6 +9,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Suez+One|VT323" rel="stylesheet">
     <meta charset="utf-8">
     <title>Mongo Burger</title>
 </head>
@@ -16,25 +17,30 @@
 <body id="myPage">
 
     <div class="container-fluid bg-1">
-        <h1>Welcome to Mongo Burger</h1>
-        <p><em>Don't buy a burger from those Good Burger chumps!</em></p>
-        <p>Create your own burger here at Mond--I mean Mongo Burger!</p>
+        <div id="titleDiv" class="col-sm-6">
+            <h1>Welcome to MONGO BURGER</h1>
+            <p><em>Don't buy a burger from those Good Burger chumps!</em></p>
+            <h3>Create your own burger here at Mond--I mean Mongo Burger!</h3>
+        </div>
+        <div id="logoDiv" class="col-sm-6">
+            <img id="logo" src="The_Mondo_Burger_Logo_ENHANCED.png"></img>
+        </div>
     </div>
 
     <div ng-app="myApp" ng-controller="myCtrl">
 
         <div class="container-fluid bg-2">
+            <div id="burgDiv" class="col-sm-4">
+                <img id="burg" src="itsABurger.png"></img>
+            </div>
             <div class="col-sm-8">
                 <h2>Assemble your burger components</h2>
-            <form id="newBurgerRecipe" ng-submit="addRecipe($event)">
-                Name your creation: <input type="text" ng-model="burgerName" value=""><br> Name yourself: <input type="text" ng-model="name" value=""><br> Indicate Bun Type: <input type="text" ng-model="bun" value=""><br> Vegetable (you only get one):
-                <input type="text" ng-model="vegetable" value=""><br> Denote Cheese Type: <input type="text" ng-model="cheese" value=""><br> Sauce Identification: <input type="text" ng-model="sauce" value=""><br> Input Meat Composition: <input type="text"
-                    ng-model="meat" value=""><br>
-                <input id="submitButton" type="submit" value="Submit" onclick="history.go(0)">
-            </form>
-            </div>
-            <div class="col-sm-4">
-                <img id="burg" src="itsABurger.png"></img>
+                <form id="newBurgerRecipe" ng-submit="addRecipe($event)">
+                    Name your creation: <input type="text" ng-model="burgerName" value=""><br> Name yourself: <input type="text" ng-model="name" value=""><br> Indicate Bun Type: <input type="text" ng-model="bun" value=""><br> Vegetable (you only get one):
+                    <input type="text" ng-model="vegetable" value=""><br> Denote Cheese Type: <input type="text" ng-model="cheese" value=""><br> Sauce Identification: <input type="text" ng-model="sauce" value=""><br> Input Meat Composition: <input type="text"
+                        ng-model="meat" value=""><br>
+                    <input id="submitButton" type="submit" value="Submit" onclick="history.go(0)">
+                </form>
             </div>
         </div>
 
@@ -60,6 +66,8 @@
                 <span class="glyphicon glyphicon-chevron-up "></span>
             </a><br><br>
         <p>Created by Maximum Robinson and Nathan Tucker for BYU CS 260</p>
+        <p>If you don't get what this page is in reference to: </p>
+        <a href="https://en.wikipedia.org/wiki/Good_Burger">Click here to learn more</a>
     </footer>
 
 </body>
