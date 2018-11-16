@@ -15,8 +15,13 @@ db.once('open', function() { //Lets us know when we're connected
 });
 var mongoose = require('mongoose');
 var BurgerSchema = new mongoose.Schema({
-  title: String,
-  upvotes: {type: Number, default: 0},
+  burgerName: String,
+  name: String,
+  bun: String,
+  vegetable: String,
+  cheese: String,
+  sauce: String,
+  meat: String,
 });
 mongoose.model('Burger', BurgerSchema);
 var Burger = mongoose.model('Burger');
@@ -42,9 +47,10 @@ app.get('/burger', function(req, res, next) {
 });
 
 app.post('/burger', function(req, res, next) {
-    var burger = new Burger(req.body);
-    burger.save(function(err, burger){
+    var newBurger = new Burger(req.body);
+    newBurger.save(function(err, burger){
         if(err){ return next(err); }
+        console.log(burger);
         res.json(burger);
     });
 });
