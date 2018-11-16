@@ -34,11 +34,16 @@
         </div>
 
         <div class="container-fluid bg-3">
-            <ul ng-if='article.length' class='list center stretch'>
-                <li ng-repeat='a in article' class='article'>
-                    <h1>{{ a.title }}</h1>
-                    <img class='avatar' ng-src="{{a.imageUrl}}"></img><br>
-                    <h4>{{a.caption}}</h4>
+            <h2>Previous Orders List</h2>
+            <ul ng-if='burgers.length' class='list center stretch'>
+                <li ng-repeat='b in burgers' class='burgers'>
+                    <h3>{{ b.burgerName }}</h3>
+                    <h4>By {{ b.name }}</h4>
+                    <h4>BUN {{b.bun}}</h4>
+                    <h4>VEG {{b.vegetable}}</h4>
+                    <h4>CHEESE {{b.cheese}}</h4>
+                    <h4>SAUCE {{b.sauce}}</h4>
+                    <h4>MEAT {{b.meat}}</h4>
                 </li>
             </ul>
         </div>
